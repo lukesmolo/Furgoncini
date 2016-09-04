@@ -1,0 +1,239 @@
+.hiddens {
+	display: none;
+
+	overflow: auto;
+}
+.clickable{
+	cursor: pointer;
+}
+
+.path_name{
+}
+
+#right {
+
+}
+
+.sortable_days {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 15px;
+
+}
+.sortable_days > li, .sortable_paths > li{
+
+	color: #ffffff;
+}
+.sortable_paths {
+	list-style-type: none;
+	margin: 0; padding: 0;
+	margin-bottom: 15px;
+}
+/*.sortable li span { position: absolute; margin-left: -1.3em; }*/
+
+.lists {
+	margin-top: 10px;
+}
+
+.ul_list_container{
+	width: 50%;
+
+}
+
+body {
+	font-family: "Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
+	background-color: #A8A8A8;
+
+}
+
+.automatic_reorder_from_paths, .automatic_reorder_from_days{
+	margin-bottom: 20px;
+	border-radius: 24px !important;
+	background: #FF9900 !important;
+	color : #ffffff !important;
+}
+
+.automatic_reversal_from_paths, .automatic_reversal_from_days{
+	margin-bottom: 20px;
+	border-radius: 24px !important;
+	background: #FF9900 !important;
+	color : #ffffff !important;
+}
+
+#menu-toggle, #make_print, #path_new_btn, #shop_new_btn, .automatic_insertion{
+	border-radius: 24px !important;
+	background: #FF9900 !important;
+	color : #ffffff !important;
+
+}
+#path_new_btn, #shop_new_btn {
+	margin-bottom: 20px;
+}
+
+.with_data {
+	color : #ffffff !important;
+	background-color: #A8A8A8 !important;
+	margin-bottom: 100px;
+}
+.modify_path_time {
+	background-color: #A8A8A8;
+	color: white;
+	width: 100px;
+}
+
+.clockpicker_container{
+	width: 50%;
+}
+
+.to_sort_time {
+	cursor: pointer;
+	width:50%;
+	color: #ffffff;
+}
+
+.to_sort_name{
+	cursor: pointer;
+	color: #ffffff;
+}
+
+.insert_new_shop_container{
+	color:white;
+	background-color: #A8A8A8;
+}
+
+.autocomplete_input, #new_path_name, #new_path_time, #new_shop_city, #new_shop_name {
+	color:white;
+	background-color: #A8A8A8;
+
+}
+
+
+.form-control::-webkit-input-placeholder { color: white; }
+.form-control:-moz-placeholder { color: white; }
+.form-control::-moz-placeholder { color: white; }
+.form-control:-ms-input-placeholder { color: white; }
+
+.days_modification{
+	color:#ffffff!important;
+	border-radius:24px !important;
+	background: #A8A8A8!important;
+	border-color: #FF9900  !important;
+
+}
+.days_modification.active, .automatic_insertion.active{
+	color:#FF9900!important;
+	border-radius:24px !important;
+	background: #ffffff!important;
+
+}
+input:focus{
+	border-color: #FF9900 !important;
+	box-shadow: 0px 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 2px rgba(229, 103, 23, 0.6) !important;
+	outline: 0 none !important;
+}
+
+#shops_list_table > tbody > tr:nth-child(even) > td, #shops_list_table  > tbody > tr:nth-child(even) > th {
+	background-color:#A8A8A8 ;
+	color: white;
+}
+
+
+#shops_list_table > tbody > tr:nth-child(odd) > td, #shops_list_table  > tbody > tr:nth-child(odd) > th {
+	background-color: #A8A8A8;
+	color: white;
+}
+
+#shops_list_table {
+	color:white;
+	margin-top: 20px;
+}
+
+.add_shop_to_list_from_days, .add_shop_to_list_from_paths{
+	color:#FF9900 !important;
+	border-radius:24px !important;
+	border-color: #A8A8A8! important;
+	background: transparent !important;
+}
+
+.automatic_insertion{
+	margin-top: 5px;
+
+}
+
+#paths_list_table > tbody > tr:not(.with_data) > td, #days_list_table > tbody > tr:not(.with_data) > td{
+	border-top: 0px !important;
+}
+
+button {
+
+	text-shadow: none !important;
+}
+
+.buttons_list_container {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+#new_path_time_container{
+	color: white;
+	width: 50%;
+
+}
+#new_path, #new_shop{
+	width: 50%;
+	color: white;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.add_new_path_button, .add_new_shop_button {
+	color:white !important;
+	border-radius:24px !important;
+	background: #FF9900!important;
+
+}
+#select_day, #path_options_buttons{
+	margin-top: 60px;
+	margin-bottom: 20px;
+}
+
+.ui-menu, .ui-menu-item {
+	background: #FF9900 !important;
+
+	color: white;
+
+}
+.ui-menu {
+
+	width: 25%;
+}
+.menu_selection.active {
+	background: #FF9900;
+}
+.menu_selection.active > a{
+	color: white!important;
+}
+
+.arrow_img{
+	height: 40px;
+	width: 15px;
+}
+
+li > span {
+	line-height: 2 !important;
+}
+
+#menu_date {
+	color: #FF9900;
+	position: absolute;
+	bottom: 0;
+	font-size: small;
+	width: inherit;
+	}
+
+#menu_date_div {
+		width: 100%;
+	height: 100%;
+
+}

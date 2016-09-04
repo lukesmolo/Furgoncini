@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='UTF-8' />
+
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/jquery-ui.css">
+
+		<link rel="stylesheet" href="css/index.css" media="screen">
+		<link rel="stylesheet" href="css/print.css" >
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-clockpicker.min.css">
+		<link href="css/simple-sidebar.css" rel="stylesheet">
+
+		<script src="js/jquery-1.11.2.min.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<script src="js/jquery.livequery.js"></script>
+		<script src="js/jquery.printPage.js"></script>
+
+		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery.confirm.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/mindmup-editabletable.js"></script>
+		<script type="text/javascript" src="js/bootstrap-clockpicker.min.js"></script>
+		<script type="text/javascript" src="js/stupidtable.js"></script>
+
+		<title><%= @page_title %></title>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="sidebar-wrapper">
+				<ul class="sidebar-nav">
+					<li class="sidebar-brand">
+					</li>
+					<li  class="menu_selection">
+						<a class="days_selection" data-eng_value="monday" href="#">Monday</a>
+					</li>
+
+					<li  class="menu_selection">
+						<a class="days_selection"  data-eng_value="tuesday" href="#">Tuesday</a>
+					</li>
+					<li  class="menu_selection">
+						<a class="days_selection"  data-eng_value="wednesday" href="#">Wednesday</a></li>
+					<li  class="menu_selection">
+						<a class="days_selection"  data-eng_value="thursday" href="#">Thursday</a>
+					</li>
+					<li  class="menu_selection">
+						<a class="days_selection"  data-eng_value="friday" href="#">Friday</a>
+					</li>
+					<li  class="menu_selection">
+						<a class="days_selection"  data-eng_value="saturday" href="#">Saturday</a>
+					</li>
+					<li  class="menu_selection">
+						<a class="days_selection"  data-eng_value="sunday" href="#">Sunday</a>
+					</li>
+					<li  class="menu_selection">
+						<a onClick="show_option_panel('path', 'modify', true)" href="#">Paths Settings</a>
+					</li>
+					<li  class="menu_selection" >
+						<a onClick="show_option_panel('shop', 'modify', true)" href="#">Shops Settings</a>
+					</li>
+				</ul>
+
+				<div id="menu_date_div"  >
+					<span id="menu_date" class="text-center" >
+					</span>
+				</div>
+			</div>
+
+			<div id="page-content-wrapper">
+				<button type="button" id="menu-toggle" class="btn btn-default" >Menu</button>
+				<div id="day_panel" class="hiddens">
+					<button type="button" id="make_print" class="btn btn-defaul pull-right" >Print</button>
+					<button type="button" id="print" class="hiddens"></button>
+					<table id="days_list_table" class="table table-striped">
+						<thead >
+							<tr><th></th><th class="to_sort_name" data-eng_value="name" >Name</th><th class="to_sort_time" data-eng_value="time">Departure</th><th></th></tr>
+						</thead>
+						<tbody id="days_listTable">
+						</tbody>
+					</table>
+				</div>
+				<div id="modify_path" class="hiddens">
+					<div id="select_day"  class="pull-left">
+						<button type="button" data-eng_value="monday" class="btn btn-default days_modification" href="#">Monday</button>
+						<button type="button" data-eng_value="tuesday" class="btn btn-default days_modification" href="#">Tuesday</button>
+						<button type="button" data-eng_value="wednesday" class="btn btn-default days_modification" href="#">Wednesday</button>
+						<button type="button" data-eng_value="thursday" class="btn btn-default days_modification" href="#">Thursday</button>
+						<button type="button" data-eng_value="friday" class="btn btn-default days_modification" href="#">Friday</button>
+						<button type="button" data-eng_value="saturday" class="btn btn-default days_modification" href="#">Saturday</button>
+						<button type="button" data-eng_value="sunday" class="btn btn-default days_modification" href="#">Sunday</button>
+
+					</div>
+					<div id="path_options_buttons" class"pull-rigth">
+						<button  id="path_new_btn"  class="btn btn-default pull-right" onClick = "show_option_panel('path','new', false)">New Path</button>
+
+					</div>
+
+					<div id="new_path" class="hiddens">
+						<form onSubmit="add_new_path(); return false" class="form">
+							<div class="form-group">
+								<label for="new_path_name">Path Name</label>
+								<input type="text" class="form-control" id="new_path_name">
+							</div>
+							<div class="form-group" id="new_path_time_container">
+								<label for="new_path_time">Departure</label>
+								<div class="input-group clockpicker"  data-autoclose="true" >
+									<input type="text" id="new_path_time" class="form-control" value="09:30">
+									<span class="input-group-addon">
+										<span class="glyphicon glyphicon-time"></span>
+									</span>
+								</div>
+
+							</div>
+							<br>
+							<button type="submit" class="btn btn-default btn-sm add_new_path_button">Confirm</button>
+							<button type="submit" onClick="show_option_panel('path',false, false); return false" class="btn btn-default btn-sm add_new_path_button">Cancel</button>
+
+						</form>
+					</div>
+
+					<table id="paths_list_table" class="table table-striped ">
+						<thead >
+							<tr><th></th><th class="to_sort_name" data-eng_value="name" >Name</th><th class="to_sort_time" data-eng_value="time">Departure</th><th></th></tr>
+						</thead>
+						<tbody id="paths_listTable">
+						</tbody>
+					</table>
+				</div>
+
+				<div id="modify_shop" class="hiddens" >
+					<div id="shop_options_buttons" >
+						<button  id="shop_new_btn" class="btn btn-default pull-right" onClick = "show_option_panel('shop','new', false)">New Shop</button>
+
+					</div>
+
+					<div id="new_shop" class="hiddens">
+						<form onSubmit="add_new_shop(); return false"class="form">
+							<div class="form-group">
+								<label for="new_shop_city">City of the Shop</label>
+								<input type="text" class="form-control" id="new_shop_city" >
+							</div>
+							<div class="form-group">
+								<label for="new_shop_name">Shop Name</label>
+								<input type="text" class="form-control" id="new_shop_name" >
+							</div>
+							<br>
+							<button type="submit" class="btn btn-default btn-sm add_new_shop_button">Confirm</button>
+							<button type="submit" onClick="show_option_panel('shop',false, false); return false" class="btn btn-default btn-sm add_new_shop_button">Cancel</button>
+
+						</form>
+					</div>
+
+					<table id="shops_list_table" class="tablesorter table table-striped table-hover">
+						<thead >
+							<tr><th data-sort="string" data-eng_value="city">City</th><th data-sort="string" data-eng_value="name">Name</th><th data-sort="int" data-eng_value="distance">Distance</th><th data-sort="int" data-eng_value="lat">Latitude</th><th data-sort="int" data-eng_value="lng">Longitude</th><th></th></tr>
+						</thead>
+						<tbody id="shops_listTable">
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
