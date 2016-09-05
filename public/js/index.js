@@ -744,7 +744,7 @@ modify_path(new_values, to_save, update) {
 				paths.push(element);
 
 			});
-			if(data['result'] !== "Richiesta rifiutata") {
+			if(data['result'] !== "Request refused") {
 
 				loaded_paths = paths;
 				if(update)

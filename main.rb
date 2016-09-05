@@ -183,7 +183,7 @@ post  '/modify_paths' do
 						if to_order
 							result = automatic_reorder(x[path_new_param])
 							if result == -1
-								return { :result => 'Requested refused'}.to_json
+								return { :result => 'Request refused'}.to_json
 							else
 								x[path_new_param] = result;
 							end
