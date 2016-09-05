@@ -5,7 +5,7 @@ for your delivery scheduling.
 You can keep stored your shops to be served and the paths for your vans. If you want
 to make a temporarily modification, you are able to it without changing your
 information stored. When you have finished to make your changes, you can easily
-download your paths for the day.
+print your paths for the day.
 
 
 ##Requirements
